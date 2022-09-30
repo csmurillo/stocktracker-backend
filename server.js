@@ -19,22 +19,14 @@ const app = express();
 
 const server = http.createServer(app);
 
-// const io = socketio(server);
-// const io = require('socket.io')(server, {
-//     cors: {
-//       origin: "http://localhost:3000",
-//     },
-//   });
-
 app.use(expressValidator());
 app.use(express.json());
 app.use(cors({origin: '*'}));
 
 // connect to mongodb
-mongoose.connect('mongodb+srv://green:fg4Cn4oIbZ9GfV3a@cluster0.7fyco.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+mongoose.connect(process.env.DATABASE)
         .then(()=>{console.log('db connected');})
         .catch(()=>{console.log('error db');});
-
 
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
