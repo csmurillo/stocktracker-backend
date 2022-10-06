@@ -38,7 +38,8 @@ exports.addToWatchList= (req,res)=>{
         }
         let stockSymbol=req.body.stockSymbol;
         // mock prices
-        const finnhub=`https://mockstockapi.herokuapp.com/api/stockLivePrice?stock=${stockSymbol}`;
+        const finnhub = `https://stock-tracker-mock.herokuapp.com/api/stockLivePrice?stock=${stockSymbol}`;
+        // const finnhub=`https://mockstockapi.herokuapp.com/api/stockLivePrice?stock=${stockSymbol}`;
         const finnhubRes = await fetch(finnhub);
         const pricePromise = await finnhubRes.json();
         const stockPrice=pricePromise.price;
@@ -95,7 +96,8 @@ exports.updateWatchList=(req,res)=>{
         let stockSymbol=req.body.symbol;
 
         // mock prices
-        const finnhub=`https://mockstockapi.herokuapp.com/api/stockLivePrice?stock=${stockSymbol}`;
+        const finnhub=`https://stock-tracker-mock.herokuapp.com/api/stockLivePrice?stock=${stockSymbol}`;
+        // const finnhub=`https://mockstockapi.herokuapp.com/api/stockLivePrice?stock=${stockSymbol}`;
         const finnhubRes = await fetch(finnhub);
         const pricePromise = await finnhubRes.json();
         const stockPrice=pricePromise.price;

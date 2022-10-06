@@ -285,7 +285,7 @@ exports.stock = async (req,res)=>{
 // url: /stock/price/stockSymbol
 exports.stockPrice=async (req,res)=>{
     const stockSymbol = req.symbol;
-    const livePrice = `https://mockstockapi.herokuapp.com/api/stockLivePrice?stock=${stockSymbol}`
+    const livePrice = `https://stock-tracker-mock.herokuapp.com/api/stockLivePrice?stock=${stockSymbol}`
     // const livePrice=`https://finnhub.io/api/v1/quote?symbol=${stockSymbol}&token=${process.env.STOCK_INFO_FINNHUB_API_KEY}`;
     const livePriceRes=await fetch(livePrice);
     const liveStockPriceData=await livePriceRes.json();
@@ -324,8 +324,8 @@ exports.stockNews = async (req,res)=>{
 
 exports.stockMovement = async (req,res)=>{
     const stockSymbol = req.symbol;
-    const stockTimeSeries = `https://mockstockapi.herokuapp.com/api/stockDayHistory?stock=${stockSymbol}`;
-    // const stockTimeSeries = `https://localhost:3005/api/stockDayHistory?stock=${stockSymbol}`;
+    // const stockTimeSeries = `https://mockstockapi.herokuapp.com/api/stockDayHistory?stock=${stockSymbol}`;
+    const stockTimeSeries = `https://stock-tracker-mock.herokuapp.com/api/stockDayHistory?stock=${stockSymbol}`;
     // live data
     // const stockTimeSeries = `https://api.twelvedata.com/time_series?symbol=${stockSymbol}&interval=5min&outputsize=84&apikey=${process.env.STOCK_DOW_JONES_12DATA}&source=docs`;
     const timeSeriesRes = await fetch(stockTimeSeries);
@@ -369,8 +369,8 @@ exports.stockMovement = async (req,res)=>{
 
 exports.stockWeekMovement = async (req,res)=>{
     const stockSymbol = req.symbol;
-    const stockTimeSeries = `https://mockstockapi.herokuapp.com/api/stockWeekHistory?stock=${stockSymbol}`;
-    // const stockTimeSeries = `https://localhost:3005/api/stockWeekHistory?stock=${stockSymbol}`;
+    // const stockTimeSeries = `https://mockstockapi.herokuapp.com/api/stockWeekHistory?stock=${stockSymbol}`;
+    const stockTimeSeries = `https://stock-tracker-mock.herokuapp.com/api/stockWeekHistory?stock=${stockSymbol}`;
     // const stockTimeSeries = `https://api.twelvedata.com/time_series?symbol=${stockSymbol}&interval=5min&outputsize=1000&apikey=${process.env.STOCK_DOW_JONES_12DATA}&source=docs`;
     const timeSeriesRes = await fetch(stockTimeSeries);
     const timeSeriesData = await timeSeriesRes.json();
@@ -403,8 +403,8 @@ exports.stockWeekMovement = async (req,res)=>{
 
 exports.stockMonthMovement=async(req,res)=>{
     const stockSymbol = req.symbol;
-    const stockTimeSeries = `https://mockstockapi.herokuapp.com/api/stockMonthHistory?stock=${stockSymbol}`;
-    // const stockTimeSeries = `https://localhost:3005/api/stockMonthHistory?stock=${stockSymbol}`;
+    // const stockTimeSeries = `https://mockstockapi.herokuapp.com/api/stockMonthHistory?stock=${stockSymbol}`;
+    const stockTimeSeries = `https://stock-tracker-mock.herokuapp.com/api/stockMonthHistory?stock=${stockSymbol}`;
     // const stockTimeSeries = `https://api.twelvedata.com/time_series?symbol=${stockSymbol}&interval=5min&outputsize=2500&apikey=${process.env.STOCK_DOW_JONES_12DATA}&source=docs`;
     const timeSeriesRes = await fetch(stockTimeSeries);
     const timeSeriesData = await timeSeriesRes.json();
