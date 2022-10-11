@@ -10,7 +10,6 @@ exports.watchList=(req,res)=>{
                 error: "Sorry for the inconvenience something went wrong, our team is working to fix the problem."
             });
         }
-        // console.log('watchlist::::::::::::'+watchList.stocks);
         res.status(200).json({
             watchList:watchList.stocks.reverse().filter(function(stock){
                 // if(!stock.priceTargetReached){

@@ -315,7 +315,7 @@ exports.stockNews = async (req,res)=>{
     const stockSymbol = req.symbol;
     console.log(stockSymbol+'stockSymbol');
     // const {stockSymbol} = req.stockSymbol;
-    const newapi = `https://newsapi.org/v2/everything?q=${stockSymbol}&from=2022-09-15&sortBy=publishedAt&apiKey=${process.env.STOCK_NEWS_API_KEY}`;
+    const newapi = `https://newsapi.org/v2/everything?q=${stockSymbol}&from=2022-09-29&sortBy=publishedAt&apiKey=${process.env.STOCK_NEWS_API_KEY}`;
     const newsRes = await fetch(newapi);
     const newsData = await newsRes.json();
     // console.log('newsdata'+newsRes);
