@@ -266,7 +266,7 @@ exports.stock = async (req,res)=>{
 
     // using mock api
     // const stockInfo = `https://localhost:3005/api/stockInformation?stock=${stockSymbol}`;
-    const stockInfo =  `https://mockstockapi.herokuapp.com/api/stockInformation?stock=${stockSymbol}`;
+    const stockInfo =  `https://stock-tracker-mock.herokuapp.com/api/stockInformation?stock=${stockSymbol}`;
     const stockInfoRes = await fetch(stockInfo);
     const stockInfoData = await stockInfoRes.json();
 
